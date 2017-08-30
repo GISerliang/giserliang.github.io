@@ -11,10 +11,9 @@
 
   
   <meta name="description" content="最近在做一个Web项目，需要用户把Word上传然后展示到页面，但是Word在线浏览的功能不及PDF，因此需要将Word转换成PDF然后展示出来。其中遇到许多问题，特此记录，如有不妥之处请指正。
-#一、实现功能
-1、doc、docx都可转换为PDF
+一、实现功能1、doc、docx都可转换为PDF
 2、word含有中文的转换为PDF后可显示
-#二、转">
+二、转换步骤">
   
 
   
@@ -54,9 +53,9 @@
   <nav class="site-navigation">
     <ul>
       
-        <li><a href="/">主页</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/archives">归档</a></li>
+        <li><a href="/archives">Archives</a></li>
       
     </ul>
   </nav>
@@ -88,54 +87,41 @@
     <div class="entry">
       
         <p>最近在做一个Web项目，需要用户把Word上传然后展示到页面，但是Word在线浏览的功能不及PDF，因此需要将Word转换成PDF然后展示出来。其中遇到许多问题，特此记录，如有不妥之处请指正。</p>
-<p>#一、实现功能</p>
-<p>1、doc、docx都可转换为PDF</p>
+<h1 id="一、实现功能"><a href="#一、实现功能" class="headerlink" title="一、实现功能"></a>一、实现功能</h1><p>1、doc、docx都可转换为PDF</p>
 <p>2、word含有中文的转换为PDF后可显示</p>
-<p>#二、转换步骤</p>
-<p>word —&gt; html —&gt; pdf</p>
-<p>#三、使用工具（Jar包）</p>
-<p>##1、poi、itext（如下maven配置）</p>
-<p>作用：poi：用于将word转换为html；itext：将html转换为pdf</p>
+<h1 id="二、转换步骤"><a href="#二、转换步骤" class="headerlink" title="二、转换步骤"></a>二、转换步骤</h1><p>word —&gt; html —&gt; pdf</p>
+<h1 id="三、使用工具（Jar包）"><a href="#三、使用工具（Jar包）" class="headerlink" title="三、使用工具（Jar包）"></a>三、使用工具（Jar包）</h1><h2 id="1、poi、itext（如下maven配置）"><a href="#1、poi、itext（如下maven配置）" class="headerlink" title="1、poi、itext（如下maven配置）"></a>1、poi、itext（如下maven配置）</h2><p>作用：poi：用于将word转换为html；itext：将html转换为pdf</p>
 <center><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_9.png" alt="poi配置"><br><br>poi配置<br><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_10.png" alt="itext配置"><br><br>itext配置<br><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_11.png" alt="poi、itext版本"><br><br>poi、itext版本<br></center>
 
 
-<p>##2、jsoup（maven配置如下）</p>
-<p>作用：poi可以将以docx结尾的word完美转换为html，但是将以doc结尾的word转换为html后meta、img等标签不闭合，导致使用itext将生成的html转换为pdf时报错，因此需要使用jsoup.parse方法使html规范。</p>
+<h2 id="2、jsoup（maven配置如下）"><a href="#2、jsoup（maven配置如下）" class="headerlink" title="2、jsoup（maven配置如下）"></a>2、jsoup（maven配置如下）</h2><p>作用：poi可以将以docx结尾的word完美转换为html，但是将以doc结尾的word转换为html后meta、img等标签不闭合，导致使用itext将生成的html转换为pdf时报错，因此需要使用jsoup.parse方法使html规范。</p>
 <center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_12.png" alt="jsoup配置"></p>
 <p>jsoup配置<br></p></center><p></p>
-<p>#四、上代码</p>
-<p>##1、word转html</p>
-<p>###（1）doc结尾word（相对复杂）</p>
-<center>
+<h1 id="四、上代码"><a href="#四、上代码" class="headerlink" title="四、上代码"></a>四、上代码</h1><h2 id="1、word转html"><a href="#1、word转html" class="headerlink" title="1、word转html"></a>1、word转html</h2><h3 id="（1）doc结尾word（相对复杂）"><a href="#（1）doc结尾word（相对复杂）" class="headerlink" title="（1）doc结尾word（相对复杂）"></a>（1）doc结尾word（相对复杂）</h3><center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_13.png" alt="doc结尾word转html"></p>
 <p>doc结尾word转html<br></p></center><p></p>
-<p>###（2）docx结尾word</p>
-<center>
+<h3 id="（2）docx结尾word"><a href="#（2）docx结尾word" class="headerlink" title="（2）docx结尾word"></a>（2）docx结尾word</h3><center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_15.png" alt="docx结尾word转html"></p>
 <p>docx结尾word转html<br></p></center><p></p>
-<p>###（3）使用jsoup规范html并保存到磁盘</p>
-<center>
+<h3 id="（3）使用jsoup规范html并保存到磁盘"><a href="#（3）使用jsoup规范html并保存到磁盘" class="headerlink" title="（3）使用jsoup规范html并保存到磁盘"></a>（3）使用jsoup规范html并保存到磁盘</h3><center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_16.png" alt="jsoup规范html"></p>
 <p>jsoup规范html<br></p></center><p></p>
-<p>##2、html转pdf</p>
-<center>
+<h2 id="2、html转pdf"><a href="#2、html转pdf" class="headerlink" title="2、html转pdf"></a>2、html转pdf</h2><center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_18.png" alt="html转pdf"></p>
 <p>html转pdf<br></p></center><p></p>
-<p>#五、问题</p>
-<p>太棒啦，word终于可以转换成pdf（可以升值加薪啦😁）</p>
+<h1 id="五、问题"><a href="#五、问题" class="headerlink" title="五、问题"></a>五、问题</h1><p>太棒啦，word终于可以转换成pdf（可以升值加薪啦😁）</p>
 <center>
 
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/timg.jpeg" alt="打脸了吧"></p>
 <p>打脸了吧<br></p></center><br>别高兴太早，打开doc结尾的word转换的pdf会发现所有的中文都不显示，只有数字和英文，本来十几页的word最后剩下几页；打开docx结尾的word转换的pdf会发现更悲剧，什么也不显示，一个空白的文档。捂着脸继续研究。。。。。。<p></p>
 <p>表急，听我慢慢道来</p>
-<p>1、中文显示问题</p>
-<p>原因：</p>
+<h2 id="1、中文显示问题"><a href="#1、中文显示问题" class="headerlink" title="1、中文显示问题"></a>1、中文显示问题</h2><p>原因：</p>
 <p>中文在pdf中不显示是因为XMLWorkHelper的parseXHtml方法在执行过程中使用默认字体，而该字体不包含中文，因此不显示中文。</p>
 <p>解决方案：</p>
 <p>parseXHtml方法还有一个重载方法，其中一个参数是FontProvider，FontProvider是一个接口，扩展接口使其拥有中文显示功能（如下图）。</p>
@@ -146,8 +132,7 @@
 <p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_21.png" alt="扩展类（宋体字"></p>
 <p>扩展类（宋体字）<br></p></center><br>项目中我的扩展类中使用宋体字（正式word文档中使用该字体较多，simsun代表宋体），BaseFont.createFont的设置可以参考该文章<a href="">http://blog.csdn.net/ol_beta/article/details/5926451</a>，这里不再赘述。<p></p>
 <p>至此，中文不显示问题已解决。</p>
-<p>2、docx结尾word转pdf空白</p>
-<p>原因：</p>
+<h2 id="2、docx结尾word转pdf空白"><a href="#2、docx结尾word转pdf空白" class="headerlink" title="2、docx结尾word转pdf空白"></a>2、docx结尾word转pdf空白</h2><p>原因：</p>
 <p>打开docx结尾的word转化的html文件，发现body中有一个或多个div包裹内层标签，这些div设置了style的width值，width过大导致转换的pdf空白。</p>
 <center>
 
