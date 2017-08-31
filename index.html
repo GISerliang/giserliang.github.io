@@ -61,6 +61,89 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/08/31/NET框架程序使用Win32-API/"><span>.NET框架程序使用Win32 API</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/08/31/NET框架程序使用Win32-API/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-08-31T01:43:53.000Z">
+          2017-08-31
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>.NET 框架程序可以通过静态 DLL 入口点的方式来访问本机代码库。DllImport 属性用于指定包含外部方法的实现的dll 位置。 </p>
+<h2 id="DllImport-属性定义如下："><a href="#DllImport-属性定义如下：" class="headerlink" title="DllImport 属性定义如下："></a>DllImport 属性定义如下：</h2><blockquote>
+<p>  namespace System.Runtime.InteropServices</p>
+<p> { </p>
+<p>  　[AttributeUsage(AttributeTargets.Method)] </p>
+<p>  　public class DllImportAttribute: System.Attribute </p>
+<p>  　{ </p>
+<p>  　　public DllImportAttribute(string dllName) {…} </p>
+<p>  　　public CallingConvention CallingConvention; </p>
+<p>  　　public CharSet CharSet; </p>
+<p>  　　public string EntryPoint; </p>
+<p>  　　public bool ExactSpelling; </p>
+<p>  　　public bool PreserveSig; </p>
+<p>  　　public bool SetLastError; </p>
+<p>  　　public string Value { get {…} } </p>
+<p>  　} </p>
+<p>  } </p>
+</blockquote>
+<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><h3 id="1、DllImport只能放置在方法声明上。"><a href="#1、DllImport只能放置在方法声明上。" class="headerlink" title="　　1、DllImport只能放置在方法声明上。"></a>　　1、DllImport只能放置在方法声明上。</h3><h3 id="2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。"><a href="#2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。" class="headerlink" title="　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。"></a>　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。</h3><h3 id="3、DllImport具有五个命名参数："><a href="#3、DllImport具有五个命名参数：" class="headerlink" title="　　3、DllImport具有五个命名参数："></a>　　3、DllImport具有五个命名参数：</h3><h4 id="a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。"><a href="#a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。" class="headerlink" title="　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。"></a>　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。</h4><h4 id="b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。"><a href="#b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。" class="headerlink" title="　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。"></a>　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。</h4><h4 id="c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。"><a href="#c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。" class="headerlink" title="　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。"></a>　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。</h4><h4 id="d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。"><a href="#d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。" class="headerlink" title="　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。"></a>　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。</h4><h4 id="e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。"><a href="#e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。" class="headerlink" title="　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。"></a>　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。</h4><h4 id="f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。"><a href="#f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。" class="headerlink" title="　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。"></a>　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。</h4><h3 id="4、它是一次性属性类。"><a href="#4、它是一次性属性类。" class="headerlink" title="　　4、它是一次性属性类。"></a>　　4、它是一次性属性类。</h3><h3 id="5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。"><a href="#5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。" class="headerlink" title="　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。"></a>　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。</h3><h2 id="下面是-C-调用-Win32-MessageBox-函数的示例："><a href="#下面是-C-调用-Win32-MessageBox-函数的示例：" class="headerlink" title="下面是 C# 调用 Win32 MessageBox 函数的示例："></a>下面是 C# 调用 Win32 MessageBox 函数的示例：</h2><blockquote>
+<p>  using System; </p>
+<p>  using System.Runtime.InteropServices; </p>
+<p>  class MainApp </p>
+<p>  { //通过DllImport引用user32.dll类。MessageBox来自于user32.dll类 </p>
+<p>  　[DllImport(“user32.dll”, EntryPoint=”MessageBox”)] </p>
+<p>  　public static extern int MessageBox(int hWnd, String strMessage, String strCaption, uint uiType); </p>
+<p>  　public static void Main() </p>
+<p>  　{ </p>
+<p>  　　MessageBox( 0, “您好，这是 PInvoke！”, “.NET”, 0 ); </p>
+<p>  　} </p>
+<p>  } </p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/NET/">.NET</a><a href="/tags/Win32-API/">Win32 API</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/08/30/Java中Word转PDF解决方案/"><span>Java中Word转PDF解决方案</span></a></h3>
     
   
@@ -156,6 +239,350 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2014/06/03/青春-就此别过/"><span>青春,就此别过</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2014/06/03/青春-就此别过/" rel="bookmark">
+        <time class="entry-date published" datetime="2014-06-03T09:58:38.000Z">
+          2014-06-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>在此时听着Eason新专辑写下这篇文章，怀着一颗复杂的心情，既有着即将毕业的喜悦，又有着即将离别的不舍。</p>
+<p>青春于我来说是各种遗憾的组成。一个狗屎运似的高考二志愿录取，本在开学之初还庆幸有个二本的大学来开始我的大学生涯，还在初期的求学中一边疑惑着专业是干什么的一边认为学校的管理挺好的。随着时间慢慢溜走，心智慢慢成熟，再见证过没有传说中的报告会和运动会不是学生自愿参加而是被迫出观众，也见证了一个大学的食堂从不会逼迫买饭刷卡，也了解了一些不可理喻的规定，终于明白这所大学其实就是一个刚度过青春期的高中。既无一个大学的自由氛围，也无一个成熟的教学体系，而我更悲剧的被调剂到了这个无人了解的专业，迷茫伴随着录取通知书到来一直持续到大学的开学之后的好几年。</p>
+<p>不管多么的不了解将要学习的专业和即将度过四年的学校，新的环境总会令人兴奋，也会让人忘却一切的担忧。</p>
+<p>这四年的大学生活给我更多的是好运。首先，不得不说的是我终于找到了我将要奋斗一生的目标，这对于我来说是最大的喜讯。起源还是由于在看到学长做出来的在我那时看起来牛叉哄哄的系统，心中的一个声音告诉我要通过接下来的学习也完成这样的东西。虽然在之后的学习中出现了各种困难，但人生就这么突然的进入了新的篇章，我从之前随大流的人生状态转为为自己的理想奋斗。理想是让人兴奋，也会让人忘却一切不顺并为自己奋斗的东西奋不顾身的东西。我很庆幸我在这找到了他。其次，我遇到了可能我这辈子都不会再遇到也是这辈子不会忘了的恩师。虽然他没给我在专业技术上做出很多指导，但他给我指明了前进的方向，也让我在别人还在享受大学休闲生活的时候学会了自学，学会了独立思考。也是他曾在我大学迷茫之时给了我一次机会，而我给他的答复是即便困难也从未放弃，即便现在看来我依旧很水，各方面也从未达到过他的要求。无论其他人怎么评价他，他都在我人生中留下了浓墨重彩的一笔。第三，就是这个让我有归属感、同患难的0624101班。这个班级让我在这个不算很大的城市有了一点归属感，这个班级也让我们平淡的大学生活有了不平凡的见证者。有兄弟，有姐妹，有情侣，有基友，一群有爱的家伙。曾记得有个叫生哥的豪爽的班主任在一起聚会；也记得有乔冲、帅栋、马培、小明和律律为班级荣誉跑前跑后；也还记得为了李琦我们集体募捐；也还记得一起在平西湖穿着班服野炊；也在考研教室一起满怀着梦想讨论着自己钟意的生活；地信群里留下了我们不得不说的秘密；篮球场上也有我们一起度过的欢乐时光。这就是我们，经历了很多，也分享了很多的大学大家庭，留下的不仅有苦涩、欢笑，更多的是慢慢的青春回忆。青葱岁月有你们一起走过，真的挺好！希望五年也好，十年也罢，当我们再聚首我们还会在一起欢声笑语。</p>
+<p>毕业聚餐也看到了各种悲伤，四年的时光已经让我们喜欢和习惯了这个班级，每个人都有自己的不舍。我们希望留住这个我们自己谱写的青春赞歌但是时间不会给我们机会了。该走的人总会离别，再留恋的人我们也不得不说一声珍重。谢谢你们在我最美好的四年留下的最珍贵的记忆，不要忘了有我，你们。这次的别离就真的让我们走上各自的人生道路，让我们带着这个回忆，无悔的走向更广阔的人生。还有，你们这些人不要以为毕业了就可以忘了我，都给我好好的记得我，哪天有个麻烦事你们如果能办那么你们是跑不掉的[奸笑]。珍重，你们！</p>
+<p>重新翻看毕业照片，突然感觉我们演了一场很大的戏，一场演了四年的戏。我们一起欢笑着聚首，慢慢的人都齐了，人心也齐了，我们也以最美的姿态展现了我们；接着走着走着曲终人也散了。四年不长但是有我们相互的陪伴走下来才是最难得的。也突然想起来考研的那段时光，每天的话不多但是就是那样一个班让我们感觉很温暖，一起奋斗，一起鼓励，一起探讨，一起小high，最后的冲刺阶段也会相互的鼓励。原来青春最美的不是这几年，而是这几年有这么多的人陪着我们。</p>
+<p>研究生的考试也充满了大喜大悲，起初在认为南师大没招满充满喜悦，再到后来的没过复试线；也曾对山科大满怀憧憬，再到后来的没考数学不录；也曾因桂林理工千里迢迢的跑到一个人生地不熟的城市，最终也被拒之门外。所有的一切都让我对之后的生活充满犹豫，满怀梦想的心也慢慢沉寂。</p>
+<p>本就没有将考研当作未来有所作为的唯一出路，但是当你看到希望就尽在咫尺的时候，最想要的可能就是不顾一切的抓住他吧。即便像我这种曾干脆的说过考上就上考不上就直接工作，从不会认为二战会发生在我身上的人，认为看透了研究生之后最终目的也是为了工作的人，也在知道考研成绩高处国家线不少之后一直犹豫要不要二战。还是会觉得不甘心，这也是我一直以来最大的缺点，在某些重要的决定面前会犹豫不决。我也问过自己这样一个不算太难的问题为什么会如此困扰我，最终也每个答案。</p>
+<p>也是在我即将做出决定的时刻，可以算是幸运的东西又再次降临到我，在调剂的最后一天，我赶上江西理工的最后一班车。可能命运就喜欢给我这种惊喜，大学就是，研究生也是。我放弃了在乎学校好不好，也放弃了在意三年还是两年，现在的我只要求一点，导师给力就行，很庆幸我找到了。至少现在以我的眼界是这样的。</p>
+<p>一个自我感觉良好却不知道自信是什么，一个有过想法却没有追求，一个想要帮助他人却又敏感怕被误解，一个喜欢皆大欢喜却总是弄巧成拙，一个想要自由却又不得不自缚手脚，一个伪学霸真学渣，一个正直不足闷骚有余，一个言语不多却想看透周围，一个运气一般但总能笑对生活，一个算得上靠谱却不能及时赶到身边，一个看起来细心却总粗心不断，这就是我，一个还没吃胖的死瘦子。</p>
+<p>我不认为我能拯救世界，也没想过世界拯救我。可能从小就没有什么好运气，也不曾有太多的奢求，所以造就了现在淡然的我，挂在嘴边最多的就是“淡定”。身边也总会出现一些牛叉哄哄的牛人让我膜拜不已，这可能就是我没有特别好运的人生中最大的好运了吧。我始终相信这样一句话，爱笑的人运气一般都不会太差，所以我总是用笑来赶走霉运，这就是我为什么既没有太大的好运也没太差的霉运。人生已经这么精彩了我就不奢求太多了。</p>
+<p>我，一个存在感极低的人，但也总想浮夸。一些想说又没说出口的话，最后还是留给了我自己。不希望我在乎的人忘了我，所以慢慢的我理解了EASON的《浮夸》，我也希望别人能够在N年之后谈论一下我，“加几声嘘声也不怕”。不管是好事还是糗事，你们只要还记得我这个微薄存在感的人就很好。</p>
+<p>平淡却又温馨的家庭也给我二十几年的生命中烙下了很深的印记，爸妈只做好该做的不奢求其他的生活态度让我学到了很多。他们对生活的满足感和在平淡中寻找快乐的方式都会让我对生活产生不同的理解。生活给了他们很多苦涩但是他们却也总能妙语连珠自得其乐，我和我姐上学期间也未曾让家里轻松过，但是他们却总在尽最大的努力给我们想要的。我们也曾叛逆过，做过一些不太懂事的行为，他们也慢慢的在学习着我们的心思，慢慢的理解我们的世界。我们也会调侃他们用到的新潮的词语，比如“闪婚”抑或“搞笑”。有人说时间长了会把父母当成负担，但我感觉这样其乐融融的家庭是我以后想要的，可能我没办法让我的物质生活很富有，但只为了钱而活着的生活会让我更加痛苦。父母给我上了一节二十几年的课，这会就在我的青春，指引我的人生。</p>
+<p>有很多看起来很难达成的事情，可能去做的时候真的会遇到很多困难和阻碍，但其实最终都会渡过。可能大部分人都有想要放弃的时刻，有些人真的放弃了，有的人又坚持了那么一小会儿，但就是那么一小会儿时间，让他抵达了终点。终点其实非常美丽，这时你会觉得之前那些艰辛，那些绝望的瞬间，都算个屁啊。</p>
+<p>青春最大的魅力就是他的不完美。他将伴着我们的毕业而结束。有喜悦，有痛苦，有不舍，有遗憾。唯独不存在的是后悔，即便不完美。</p>
+<p>一场Eason的演唱会，一次半求学半游玩的毕业旅行，一个high到爆的毕业聚餐，我已经满足了，见证了我不完美的青春，就此别过了，我会怀念你的。</p>
+<p>当然缺了一个她，可能是现在的我还配不上优秀的你，等着我吧，我会用更好的我来迎接你，这也算是我青春最不完美的了吧。</p>
+<p>青春，就此别过了！！！</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Life/">Life</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/"><span>Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/" rel="bookmark">
+        <time class="entry-date published" datetime="2014-05-28T00:31:57.000Z">
+          2014-05-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>今天在安装Aptana Studio 2时出现这个东东，卸载后再安装依旧不行。</p>
+<center>
+
+<p> <img src="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/0_13016219655D2x.gif" alt=""></p>
+<p></p></center><p></p>
+<h1 id="原因-："><a href="#原因-：" class="headerlink" title="原因 ："></a>原因 ：</h1><p>就是由于你把“我的文档”的位置修改造成的。 但Aptana还以为 “我的文档”的位置 是在系统的默认路径下。</p>
+<h1 id="解决办法-："><a href="#解决办法-：" class="headerlink" title="解决办法 ："></a>解决办法 ：</h1><blockquote>
+<p>**右键快捷方式，找到“属性”，把“目标”修改为 </p>
+<p>“D:/Program Files/Aptana Studio 2/AptanaStudio2.exe” -data “D:/Workspaces/Aptana Studio 2”**</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Aptana-Studio/">Aptana Studio</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/"><span>App_GlobalResources.afvubzdv.resources.dll--拒绝访问。</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/" rel="bookmark">
+        <time class="entry-date published" datetime="2014-05-15T12:55:36.000Z">
+          2014-05-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>在使用ArcGIS Viewer for Silverlight创建应用程序的时候有时会出现编译错误</p>
+<p>前面的忘了  最后是App_GlobalResources.afvubzdv.resources.dll”–“拒绝访问。“</p>
+<p>解决方法：</p>
+<blockquote>
+<p>找文件右键属性&gt; 安全&gt;加权限（可写权限）   对’C:/WINDOWS/Temp，增加权限NETWORK SERVICE，IUSER_XXX，ASPNET，Everyone，给予可写权限。</p>
+</blockquote>
+<p>可能有的找不到  但是能找到的都要添加权限</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/ArcGIS/">ArcGIS</a><a href="/tags/Silverlight/">Silverlight</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/"><span>ArcSDE 10.1安装、配置、连接 （SQL Server 2008）</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/" rel="bookmark">
+        <time class="entry-date published" datetime="2013-05-31T05:56:33.000Z">
+          2013-05-31
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1  概述"></a>1  概述</h1><p>ArcSDE 10.1的安装配置相较于ArcSDE 10.0和之前版本，有了一些显著的变化，比如取消了Post Install向导，很多之前的管理操作改为使用地理处理工具来执行。很多用户初次接触很不适应，本文就为大家介绍如何安装、配置和连接ArcSDE 10.1，测试数据库选择的是Microsoft SQL Server 2008 R2 Enterprise Edition SP3，操作系统是Windows 7 x64 SP1，机器名叫AGS-02，注意，AGS-02的防火墙需要关闭。</p>
+<h1 id="2-安装"><a href="#2-安装" class="headerlink" title="2  安装"></a>2  安装</h1><h2 id="2-1-SQL-Server2008-R2安装"><a href="#2-1-SQL-Server2008-R2安装" class="headerlink" title="2.1 SQL Server2008 R2安装"></a>2.1 SQL Server2008 R2安装</h2><p>这里不多讲SQL Server 2008的安装，只是说明一下其中需要注意的几个地方。</p>
+<h3 id="2-1-1-实例配置"><a href="#2-1-1-实例配置" class="headerlink" title="2.1.1 实例配置"></a>2.1.1 实例配置</h3><p>这里需要注意是使用默认配置还是使用命名实例，如下图，本文使用了命名实例：</p>
+<center><br><br><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_001.jpg" alt=""><br><br></center>
+
+<h3 id="2-1-2-目录配置"><a href="#2-1-2-目录配置" class="headerlink" title="2.1.2 目录配置"></a>2.1.2 目录配置</h3><p>其次要注意数据存储目录，默认的目录是SQL Server安装目录下的子目录，因此如果需要将数据存放到其他磁盘或路径的话，需要在这里制定数据根目录，如下图：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_002.jpg" alt=""></p>
+<p></p></center><br>主要就是实例名和数据存储路径需要注意，其他设置按照一般安装经验处理即可。<p></p>
+<h2 id="2-2-ArcSDE10-1安装"><a href="#2-2-ArcSDE10-1安装" class="headerlink" title="2.2 ArcSDE10.1安装"></a>2.2 ArcSDE10.1安装</h2><p>安装了SQL Server 2008之后，就可以安装ArcSDE了，如下图，选择对应的安装项：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_000.jpg" alt=""></p>
+<p></p></center><br>ArcSDE软件的安装没有什么特殊之处，只要一直Next就行了。安装完ArcSDE之后，没有像以前一样弹出Post Install向导，需要按照下面的步骤进行配置。<p></p>
+<h1 id="3-配置"><a href="#3-配置" class="headerlink" title="3 配置"></a>3 配置</h1><p>进行配置的机器上需要已经安装了ArcGISDesktop 10.1，以便使用地理处理工具。</p>
+<h2 id="3-1-创建地理数据库"><a href="#3-1-创建地理数据库" class="headerlink" title="3.1 创建地理数据库"></a>3.1 创建地理数据库</h2><p>在工具箱中新增了“GeodatabaseAdministration”工具集，其中包含进行地理数据库管理操作的若干工具，如下图所示：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_015.jpg" alt=""></p>
+<p></p></center><br>双击打开“Create EnterpriseGeodatabase”工具，输入参数，如下图所示：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_005.jpg" alt=""></p>
+<p></p></center><br>参数说明：<p></p>
+<p>Database Platform：本文选择SQL_Server，毫无争议；</p>
+<p>Instance：需要填写SQL Server实例名，本文是“AGS-02\ESRICD”；</p>
+<p>Database：地理数据库名称，默认是sde，也可以填其他名称；</p>
+<p>Authorization File：授权文件，即.ecp文件，一般和ArcGIS Server的授权文件是同一个；</p>
+<p>其他就是输入数据库管理员，地理数据库管理员的密码。</p>
+<p>设置好参数后，点击OK开始创建地理数据库，此过程即相当于原来的Post Install，将创建SDE系统表等。</p>
+<p>创建完成后，可以在SQL Server Management Studio中查看结果，如下图：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_012.jpg" alt=""></p>
+<p></p></center><br>如果参数设置正确，就能看到数据库已经多了sde库，其中有sde系统表。如果出现错误，除了检查输入的参数、许可文件之外，数据库连接配置也需要检查，例如作者遇到了数据库连接错误，如下图：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_013.jpg" alt=""></p>
+<p></p></center><br>因为我的数据库服务器上装了SQL Server2008 R2企业版，并且是SP3补丁，而我在客户端则是装的SQL Server Express，并且没有打补丁，所以连接会失败，创建地理数据库也就自然失败了。因此需要确保客户端和服务器端的SQL Server版本一致，能成功连接。<p></p>
+<h1 id="4-连接"><a href="#4-连接" class="headerlink" title="4 连接"></a>4 连接</h1><p>地理数据库已经创建成功，接下来就可以连接到地理数据库了。ArcGIS 10.1中推荐使用直连方式连接，因此默认情况下没有创建SDE系统服务。</p>
+<h2 id="4-1-直连连接"><a href="#4-1-直连连接" class="headerlink" title="4.1 直连连接"></a>4.1 直连连接</h2><p>直连连接比较简单，在“Database Connections”下面双击“Add Database Connection”，如下图：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_003.jpg" alt=""></p>
+<p></p></center><br>弹出直连参数设置窗口，设置直连参数，如下图：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_010.jpg" alt=""></p>
+<p></p></center><br>注意这里的Instance，和创建地理数据库时的需要保持一致，然后选择要连接的地理数据库，输入用户密码，点击OK，即可连接，如下图：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_008.jpg" alt=""></p>
+<p></p></center><br>目前还是空库，接下来我们测试将Shapefile要素类导入这个SDE库中，结果如下：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_007.jpg" alt=""></p>
+<p></p></center><br>说明直连方式已经可以正常使用ArcSDE库了。<p></p>
+<h2 id="4-2-服务连接"><a href="#4-2-服务连接" class="headerlink" title="4.2 服务连接"></a>4.2 服务连接</h2><p>除了推荐的直连方式，有时候我们还需要使用服务连接的方式，需要首先创建ArcSDE服务，然后在客户端以.sde连接文件的方式来连接地理数据库。</p>
+<h3 id="4-2-1-创建ArcSDE服务"><a href="#4-2-1-创建ArcSDE服务" class="headerlink" title="4.2.1 创建ArcSDE服务"></a>4.2.1 创建ArcSDE服务</h3><p>创建ArcSDE服务需要经过三个主要步骤：手动修改服务文件、命令行安装服务、启动服务。</p>
+<p>首先是手动修改服务文件，包括ArcSDE的service.sde文件和Windows系统的service文件，如下面两个图：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_021.jpg" alt=""></p>
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_019.jpg" alt=""></p>
+<p></p></center><br>在这两个文件中，分别添加“esri_sde    5151”并保存，如下图所示：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_020.jpg" alt=""></p>
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_018.jpg" alt=""></p>
+<p></p></center><br>然后使用命令行创建ArcSDE服务，本例命令行如下：<p></p>
+<blockquote>
+<p><strong>sdeservice -o create -d SQLSERVER,AGS-02\ESRICD -psde -i esri_sde</strong></p>
+</blockquote>
+<p>执行结果如下图所示：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_017.jpg" alt=""></p>
+<p></p></center><br>创建成功后即可启动服务，命令行如下：<p></p>
+<blockquote>
+<p><strong>sdemon -o start -i esri_sde -p sde</strong></p>
+</blockquote>
+<p>执行后将要求输入sde用户密码，然后即可启动，如下图所示：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_016.jpg" alt=""></p>
+<p></p></center><br>SDE服务已经启动，然后可以通过服务方式连接了。<p></p>
+<h3 id="4-2-2-创建服务连接文件"><a href="#4-2-2-创建服务连接文件" class="headerlink" title="4.2.2 创建服务连接文件"></a>4.2.2 创建服务连接文件</h3><p>首先找到“Create ArcSDE Connection File”工具，如下图所示：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_006.jpg" alt=""></p>
+<p></p></center><br>打开工具，输入参数，如下图所示：<p></p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_005.jpg" alt=""></p>
+<p></p></center><br>这里需要设置SDE服务所在的机器名或IP（本例是AGS-02），SDE服务名称（本例是esri_sde或5151），此外输入数据库名称（本例是sde）以及用户名密码。<p></p>
+<p>点击OK即可完成.sde服务连接文件的创建，然后到指定目录下找到连接文件，双击即可连接到地理数据库，如下图所示（上面直连测试中导入的数据清晰可见）：</p>
+<center>
+
+<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_004.jpg" alt=""></p>
+<p></p></center><br>说明服务连接方式已经可以正常使用ArcSDE库了。<p></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/ArcSDE/">ArcSDE</a>
     </span>
     
 

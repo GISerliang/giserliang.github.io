@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法 | GISerliang的博客 | 若你喜欢怪人，其实我很美</title>
+
+  
+  <meta name="author" content="GISerliang">
+  
+
+  
+  <meta name="description" content="我唱的不够动人你别皱眉">
+  
+
+  
+  
+  <meta name="keywords" content="Aptana Studio">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法"/>
+
+  <meta property="og:site_name" content="GISerliang的博客"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="GISerliang的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">GISerliang的博客</a>
+    </h1>
+    <p class="site-description">若你喜欢怪人，其实我很美</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/" rel="bookmark">
+        <time class="entry-date published" datetime="2014-05-28T00:31:57.000Z">
+          2014-05-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>今天在安装Aptana Studio 2时出现这个东东，卸载后再安装依旧不行。</p>
+<center>
+
+<p> <img src="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/0_13016219655D2x.gif" alt=""></p>
+<p></p></center><p></p>
+<h1 id="原因-："><a href="#原因-：" class="headerlink" title="原因 ："></a>原因 ：</h1><p>就是由于你把“我的文档”的位置修改造成的。 但Aptana还以为 “我的文档”的位置 是在系统的默认路径下。</p>
+<h1 id="解决办法-："><a href="#解决办法-：" class="headerlink" title="解决办法 ："></a>解决办法 ：</h1><blockquote>
+<p>**右键快捷方式，找到“属性”，把“目标”修改为 </p>
+<p>“D:/Program Files/Aptana Studio 2/AptanaStudio2.exe” -data “D:/Workspaces/Aptana Studio 2”**</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Aptana-Studio/">Aptana Studio</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 GISerliang
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
