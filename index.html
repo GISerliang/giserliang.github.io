@@ -61,89 +61,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2017/08/31/NET框架程序使用Win32-API/"><span>.NET框架程序使用Win32 API</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/08/31/NET框架程序使用Win32-API/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-31T01:43:53.000Z">
-          2017-08-31
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>.NET 框架程序可以通过静态 DLL 入口点的方式来访问本机代码库。DllImport 属性用于指定包含外部方法的实现的dll 位置。 </p>
-<h2 id="DllImport-属性定义如下："><a href="#DllImport-属性定义如下：" class="headerlink" title="DllImport 属性定义如下："></a>DllImport 属性定义如下：</h2><blockquote>
-<p>  namespace System.Runtime.InteropServices</p>
-<p> { </p>
-<p>  　[AttributeUsage(AttributeTargets.Method)] </p>
-<p>  　public class DllImportAttribute: System.Attribute </p>
-<p>  　{ </p>
-<p>  　　public DllImportAttribute(string dllName) {…} </p>
-<p>  　　public CallingConvention CallingConvention; </p>
-<p>  　　public CharSet CharSet; </p>
-<p>  　　public string EntryPoint; </p>
-<p>  　　public bool ExactSpelling; </p>
-<p>  　　public bool PreserveSig; </p>
-<p>  　　public bool SetLastError; </p>
-<p>  　　public string Value { get {…} } </p>
-<p>  　} </p>
-<p>  } </p>
-</blockquote>
-<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><h3 id="1、DllImport只能放置在方法声明上。"><a href="#1、DllImport只能放置在方法声明上。" class="headerlink" title="　　1、DllImport只能放置在方法声明上。"></a>　　1、DllImport只能放置在方法声明上。</h3><h3 id="2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。"><a href="#2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。" class="headerlink" title="　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。"></a>　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。</h3><h3 id="3、DllImport具有五个命名参数："><a href="#3、DllImport具有五个命名参数：" class="headerlink" title="　　3、DllImport具有五个命名参数："></a>　　3、DllImport具有五个命名参数：</h3><h4 id="a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。"><a href="#a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。" class="headerlink" title="　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。"></a>　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。</h4><h4 id="b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。"><a href="#b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。" class="headerlink" title="　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。"></a>　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。</h4><h4 id="c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。"><a href="#c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。" class="headerlink" title="　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。"></a>　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。</h4><h4 id="d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。"><a href="#d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。" class="headerlink" title="　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。"></a>　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。</h4><h4 id="e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。"><a href="#e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。" class="headerlink" title="　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。"></a>　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。</h4><h4 id="f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。"><a href="#f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。" class="headerlink" title="　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。"></a>　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。</h4><h3 id="4、它是一次性属性类。"><a href="#4、它是一次性属性类。" class="headerlink" title="　　4、它是一次性属性类。"></a>　　4、它是一次性属性类。</h3><h3 id="5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。"><a href="#5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。" class="headerlink" title="　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。"></a>　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。</h3><h2 id="下面是-C-调用-Win32-MessageBox-函数的示例："><a href="#下面是-C-调用-Win32-MessageBox-函数的示例：" class="headerlink" title="下面是 C# 调用 Win32 MessageBox 函数的示例："></a>下面是 C# 调用 Win32 MessageBox 函数的示例：</h2><blockquote>
-<p>  using System; </p>
-<p>  using System.Runtime.InteropServices; </p>
-<p>  class MainApp </p>
-<p>  { //通过DllImport引用user32.dll类。MessageBox来自于user32.dll类 </p>
-<p>  　[DllImport(“user32.dll”, EntryPoint=”MessageBox”)] </p>
-<p>  　public static extern int MessageBox(int hWnd, String strMessage, String strCaption, uint uiType); </p>
-<p>  　public static void Main() </p>
-<p>  　{ </p>
-<p>  　　MessageBox( 0, “您好，这是 PInvoke！”, “.NET”, 0 ); </p>
-<p>  　} </p>
-<p>  } </p>
-</blockquote>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/NET/">.NET</a><a href="/tags/Win32-API/">Win32 API</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2017/08/30/Java中Word转PDF解决方案/"><span>Java中Word转PDF解决方案</span></a></h3>
     
   
@@ -239,6 +156,89 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2014/07/12/NET框架程序使用Win32-API/"><span>.NET框架程序使用Win32 API</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2014/07/12/NET框架程序使用Win32-API/" rel="bookmark">
+        <time class="entry-date published" datetime="2014-07-12T02:30:53.000Z">
+          2014-07-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>.NET 框架程序可以通过静态 DLL 入口点的方式来访问本机代码库。DllImport 属性用于指定包含外部方法的实现的dll 位置。 </p>
+<h2 id="DllImport-属性定义如下："><a href="#DllImport-属性定义如下：" class="headerlink" title="DllImport 属性定义如下："></a>DllImport 属性定义如下：</h2><blockquote>
+<p>  namespace System.Runtime.InteropServices</p>
+<p> { </p>
+<p>  　[AttributeUsage(AttributeTargets.Method)] </p>
+<p>  　public class DllImportAttribute: System.Attribute </p>
+<p>  　{ </p>
+<p>  　　public DllImportAttribute(string dllName) {…} </p>
+<p>  　　public CallingConvention CallingConvention; </p>
+<p>  　　public CharSet CharSet; </p>
+<p>  　　public string EntryPoint; </p>
+<p>  　　public bool ExactSpelling; </p>
+<p>  　　public bool PreserveSig; </p>
+<p>  　　public bool SetLastError; </p>
+<p>  　　public string Value { get {…} } </p>
+<p>  　} </p>
+<p>  } </p>
+</blockquote>
+<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><h3 id="1、DllImport只能放置在方法声明上。"><a href="#1、DllImport只能放置在方法声明上。" class="headerlink" title="　　1、DllImport只能放置在方法声明上。"></a>　　1、DllImport只能放置在方法声明上。</h3><h3 id="2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。"><a href="#2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。" class="headerlink" title="　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。"></a>　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。</h3><h3 id="3、DllImport具有五个命名参数："><a href="#3、DllImport具有五个命名参数：" class="headerlink" title="　　3、DllImport具有五个命名参数："></a>　　3、DllImport具有五个命名参数：</h3><h4 id="a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。"><a href="#a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。" class="headerlink" title="　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。"></a>　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。</h4><h4 id="b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。"><a href="#b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。" class="headerlink" title="　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。"></a>　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。</h4><h4 id="c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。"><a href="#c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。" class="headerlink" title="　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。"></a>　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。</h4><h4 id="d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。"><a href="#d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。" class="headerlink" title="　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。"></a>　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。</h4><h4 id="e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。"><a href="#e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。" class="headerlink" title="　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。"></a>　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。</h4><h4 id="f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。"><a href="#f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。" class="headerlink" title="　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。"></a>　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。</h4><h3 id="4、它是一次性属性类。"><a href="#4、它是一次性属性类。" class="headerlink" title="　　4、它是一次性属性类。"></a>　　4、它是一次性属性类。</h3><h3 id="5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。"><a href="#5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。" class="headerlink" title="　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。"></a>　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。</h3><h2 id="下面是-C-调用-Win32-MessageBox-函数的示例："><a href="#下面是-C-调用-Win32-MessageBox-函数的示例：" class="headerlink" title="下面是 C# 调用 Win32 MessageBox 函数的示例："></a>下面是 C# 调用 Win32 MessageBox 函数的示例：</h2><blockquote>
+<p>  using System; </p>
+<p>  using System.Runtime.InteropServices; </p>
+<p>  class MainApp </p>
+<p>  { //通过DllImport引用user32.dll类。MessageBox来自于user32.dll类 </p>
+<p>  　[DllImport(“user32.dll”, EntryPoint=”MessageBox”)] </p>
+<p>  　public static extern int MessageBox(int hWnd, String strMessage, String strCaption, uint uiType); </p>
+<p>  　public static void Main() </p>
+<p>  　{ </p>
+<p>  　　MessageBox( 0, “您好，这是 PInvoke！”, “.NET”, 0 ); </p>
+<p>  　} </p>
+<p>  } </p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/NET/">.NET</a><a href="/tags/Win32-API/">Win32 API</a>
     </span>
     
 
