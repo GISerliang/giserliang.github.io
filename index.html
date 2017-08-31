@@ -1,618 +1,1181 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>GISerliang的博客 | 若你喜欢怪人，其实我很美</title>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
-  
-  <meta name="author" content="GISerliang">
-  
+    <!-- Title -->
+    
+    <title>
+        
+        GISerliang的博客
+    </title>
 
-  
-  <meta name="description" content="我唱的不够动人你别皱眉">
-  
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-  
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="GISerliang">
+    <meta name="description" itemprop="description" content="我唱的不够动人你别皱眉">
+    <meta name="keywords" content="">
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Site Verification -->
+    
+    
 
-  
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
 
-  <meta property="og:site_name" content="GISerliang的博客"/>
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
 
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="GISerliang的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="GISerliang的博客">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://giserliang.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="GISerliang的博客">
+    <meta property="og:image" content="/favicon.ico" />
+    <meta property="og:description" content="我唱的不够动人你别皱眉">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="GISerliang的博客">
+    <meta name="twitter:description" content="我唱的不够动人你别皱眉">
+    <meta name="twitter:image" content="/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://giserliang.github.io" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://giserliang.github.io" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "GISerliang的博客",
+        "logo": "/favicon.ico"
+    },
+    "url": "https://giserliang.github.io/index.html",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/favicon.ico"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://giserliang.github.io"
+    },
+    "description": "我唱的不够动人你别皱眉"
+}
+</script>
+
+
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
 </head>
 
 
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">GISerliang的博客</a>
-    </h1>
-    <p class="site-description">若你喜欢怪人，其实我很美</p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">主页</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
     
-  <article>
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <h3 class="article-title"><a href="/2017/08/30/Java中Word转PDF解决方案/"><span>Java中Word转PDF解决方案</span></a></h3>
-    
-  
+        <!-- Paradox Header -->
+        <!-- Daily pic -->
+<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/08/30/Java中Word转PDF解决方案/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-30T06:39:16.000Z">
-          2017-08-30
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>最近在做一个Web项目，需要用户把Word上传然后展示到页面，但是Word在线浏览的功能不及PDF，因此需要将Word转换成PDF然后展示出来。其中遇到许多问题，特此记录，如有不妥之处请指正。</p>
-<h1 id="一、实现功能"><a href="#一、实现功能" class="headerlink" title="一、实现功能"></a>一、实现功能</h1><p>1、doc、docx都可转换为PDF</p>
-<p>2、word含有中文的转换为PDF后可显示</p>
-<h1 id="二、转换步骤"><a href="#二、转换步骤" class="headerlink" title="二、转换步骤"></a>二、转换步骤</h1><p>word —&gt; html —&gt; pdf</p>
-<h1 id="三、使用工具（Jar包）"><a href="#三、使用工具（Jar包）" class="headerlink" title="三、使用工具（Jar包）"></a>三、使用工具（Jar包）</h1><h2 id="1、poi、itext（如下maven配置）"><a href="#1、poi、itext（如下maven配置）" class="headerlink" title="1、poi、itext（如下maven配置）"></a>1、poi、itext（如下maven配置）</h2><p>作用：poi：用于将word转换为html；itext：将html转换为pdf</p>
-<center><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_9.png" alt="poi配置"><br><br>poi配置<br><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_10.png" alt="itext配置"><br><br>itext配置<br><br><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_11.png" alt="poi、itext版本"><br><br>poi、itext版本<br></center>
-
-
-<h2 id="2、jsoup（maven配置如下）"><a href="#2、jsoup（maven配置如下）" class="headerlink" title="2、jsoup（maven配置如下）"></a>2、jsoup（maven配置如下）</h2><p>作用：poi可以将以docx结尾的word完美转换为html，但是将以doc结尾的word转换为html后meta、img等标签不闭合，导致使用itext将生成的html转换为pdf时报错，因此需要使用jsoup.parse方法使html规范。</p>
-<center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_12.png" alt="jsoup配置"></p>
-<p>jsoup配置<br></p></center><p></p>
-<h1 id="四、上代码"><a href="#四、上代码" class="headerlink" title="四、上代码"></a>四、上代码</h1><h2 id="1、word转html"><a href="#1、word转html" class="headerlink" title="1、word转html"></a>1、word转html</h2><h3 id="（1）doc结尾word（相对复杂）"><a href="#（1）doc结尾word（相对复杂）" class="headerlink" title="（1）doc结尾word（相对复杂）"></a>（1）doc结尾word（相对复杂）</h3><center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_13.png" alt="doc结尾word转html"></p>
-<p>doc结尾word转html<br></p></center><p></p>
-<h3 id="（2）docx结尾word"><a href="#（2）docx结尾word" class="headerlink" title="（2）docx结尾word"></a>（2）docx结尾word</h3><center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_15.png" alt="docx结尾word转html"></p>
-<p>docx结尾word转html<br></p></center><p></p>
-<h3 id="（3）使用jsoup规范html并保存到磁盘"><a href="#（3）使用jsoup规范html并保存到磁盘" class="headerlink" title="（3）使用jsoup规范html并保存到磁盘"></a>（3）使用jsoup规范html并保存到磁盘</h3><center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_16.png" alt="jsoup规范html"></p>
-<p>jsoup规范html<br></p></center><p></p>
-<h2 id="2、html转pdf"><a href="#2、html转pdf" class="headerlink" title="2、html转pdf"></a>2、html转pdf</h2><center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_18.png" alt="html转pdf"></p>
-<p>html转pdf<br></p></center><p></p>
-<h1 id="五、问题"><a href="#五、问题" class="headerlink" title="五、问题"></a>五、问题</h1><p>太棒啦，word终于可以转换成pdf（可以升值加薪啦😁）</p>
-<center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/timg.jpeg" alt="打脸了吧"></p>
-<p>打脸了吧<br></p></center><br>别高兴太早，打开doc结尾的word转换的pdf会发现所有的中文都不显示，只有数字和英文，本来十几页的word最后剩下几页；打开docx结尾的word转换的pdf会发现更悲剧，什么也不显示，一个空白的文档。捂着脸继续研究。。。。。。<p></p>
-<p>表急，听我慢慢道来</p>
-<h2 id="1、中文显示问题"><a href="#1、中文显示问题" class="headerlink" title="1、中文显示问题"></a>1、中文显示问题</h2><p>原因：</p>
-<p>中文在pdf中不显示是因为XMLWorkHelper的parseXHtml方法在执行过程中使用默认字体，而该字体不包含中文，因此不显示中文。</p>
-<p>解决方案：</p>
-<p>parseXHtml方法还有一个重载方法，其中一个参数是FontProvider，FontProvider是一个接口，扩展接口使其拥有中文显示功能（如下图）。</p>
-<center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_19.png" alt="parseXHtml重载方法"></p>
-<p>parseXHtml重载方法</p>
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_21.png" alt="扩展类（宋体字"></p>
-<p>扩展类（宋体字）<br></p></center><br>项目中我的扩展类中使用宋体字（正式word文档中使用该字体较多，simsun代表宋体），BaseFont.createFont的设置可以参考该文章<a href="">http://blog.csdn.net/ol_beta/article/details/5926451</a>，这里不再赘述。<p></p>
-<p>至此，中文不显示问题已解决。</p>
-<h2 id="2、docx结尾word转pdf空白"><a href="#2、docx结尾word转pdf空白" class="headerlink" title="2、docx结尾word转pdf空白"></a>2、docx结尾word转pdf空白</h2><p>原因：</p>
-<p>打开docx结尾的word转化的html文件，发现body中有一个或多个div包裹内层标签，这些div设置了style的width值，width过大导致转换的pdf空白。</p>
-<center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_22.png" alt="罪魁祸首"></p>
-<p>罪魁祸首<br></p></center><br>解决方案：<p></p>
-<p>我用的方法最简单粗暴，在jsoup格式化完成后找到style然后替换为空。</p>
-<center>
-
-<p><img src="/2017/08/30/Java中Word转PDF解决方案/Snip20170829_23.png" alt="如style有width，替换之"></p>
-<p>如style有width，替换之<br></p></center><br>注：该处的div指的是body中最直接的子div，而这些div中的又包含的div不影响。<p></p>
-<p>大功告成，可以生成美美的PDF了。</p>
-
-      
+    <!-- Pic & Slogan -->
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                若你喜欢怪人，其实我很美
+            
+        
+        </a></p>
     </div>
 
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a>
-    </span>
-    
-
+    <!-- Avatar & Name -->
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <!-- Author Avatar -->
+        <div id="author-avatar">
+            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
+        </div>
+        <div>
+            <strong>GISerliang</strong>
+        </div>
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2014/07/12/NET框架程序使用Win32-API/"><span>.NET框架程序使用Win32 API</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2014/07/12/NET框架程序使用Win32-API/" rel="bookmark">
-        <time class="entry-date published" datetime="2014-07-12T02:30:53.000Z">
-          2014-07-12
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>.NET 框架程序可以通过静态 DLL 入口点的方式来访问本机代码库。DllImport 属性用于指定包含外部方法的实现的dll 位置。 </p>
-<h2 id="DllImport-属性定义如下："><a href="#DllImport-属性定义如下：" class="headerlink" title="DllImport 属性定义如下："></a>DllImport 属性定义如下：</h2><blockquote>
-<p>  namespace System.Runtime.InteropServices</p>
-<p> { </p>
-<p>  　[AttributeUsage(AttributeTargets.Method)] </p>
-<p>  　public class DllImportAttribute: System.Attribute </p>
-<p>  　{ </p>
-<p>  　　public DllImportAttribute(string dllName) {…} </p>
-<p>  　　public CallingConvention CallingConvention; </p>
-<p>  　　public CharSet CharSet; </p>
-<p>  　　public string EntryPoint; </p>
-<p>  　　public bool ExactSpelling; </p>
-<p>  　　public bool PreserveSig; </p>
-<p>  　　public bool SetLastError; </p>
-<p>  　　public string Value { get {…} } </p>
-<p>  　} </p>
-<p>  } </p>
-</blockquote>
-<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><h3 id="1、DllImport只能放置在方法声明上。"><a href="#1、DllImport只能放置在方法声明上。" class="headerlink" title="　　1、DllImport只能放置在方法声明上。"></a>　　1、DllImport只能放置在方法声明上。</h3><h3 id="2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。"><a href="#2、DllImport具有单个定位参数：指定包含被导入方法的-dll-名称的-dllName-参数。" class="headerlink" title="　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。"></a>　　2、DllImport具有单个定位参数：指定包含被导入方法的 dll 名称的 dllName 参数。</h3><h3 id="3、DllImport具有五个命名参数："><a href="#3、DllImport具有五个命名参数：" class="headerlink" title="　　3、DllImport具有五个命名参数："></a>　　3、DllImport具有五个命名参数：</h3><h4 id="a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。"><a href="#a、CallingConvention-参数指示入口点的调用约定。如果未指定-CallingConvention，则使用默认值-CallingConvention-Winapi。" class="headerlink" title="　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。"></a>　　　a、CallingConvention 参数指示入口点的调用约定。如果未指定 CallingConvention，则使用默认值 CallingConvention.Winapi。</h4><h4 id="b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。"><a href="#b、CharSet-参数指示用在入口点中的字符集。如果未指定-CharSet，则使用默认值-CharSet-Auto。" class="headerlink" title="　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。"></a>　　　b、CharSet 参数指示用在入口点中的字符集。如果未指定 CharSet，则使用默认值 CharSet.Auto。</h4><h4 id="c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。"><a href="#c、EntryPoint-参数给出-dll-中入口点的名称。如果未指定-EntryPoint，则使用方法本身的名称。" class="headerlink" title="　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。"></a>　　　c、EntryPoint 参数给出 dll 中入口点的名称。如果未指定 EntryPoint，则使用方法本身的名称。</h4><h4 id="d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。"><a href="#d、ExactSpelling-参数指示-EntryPoint-是否必须与指示的入口点的拼写完全匹配。如果未指定-ExactSpelling，则使用默认值-false。" class="headerlink" title="　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。"></a>　　　d、ExactSpelling 参数指示 EntryPoint 是否必须与指示的入口点的拼写完全匹配。如果未指定 ExactSpelling，则使用默认值 false。</h4><h4 id="e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。"><a href="#e、PreserveSig-参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有-HRESULT-返回值和该返回值的一个名为-retval-的附加输出参数的签名。如果未指定-PreserveSig，则使用默认值-true。" class="headerlink" title="　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。"></a>　　　e、PreserveSig 参数指示方法的签名应当被保留还是被转换。当签名被转换时，它被转换为一个具有 HRESULT 返回值和该返回值的一个名为 retval 的附加输出参数的签名。如果未指定 PreserveSig，则使用默认值 true。</h4><h4 id="f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。"><a href="#f、SetLastError-参数指示方法是否保留-Win32”上一错误”。如果未指定-SetLastError，则使用默认值-false。" class="headerlink" title="　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。"></a>　　　f、SetLastError 参数指示方法是否保留 Win32”上一错误”。如果未指定 SetLastError，则使用默认值 false。</h4><h3 id="4、它是一次性属性类。"><a href="#4、它是一次性属性类。" class="headerlink" title="　　4、它是一次性属性类。"></a>　　4、它是一次性属性类。</h3><h3 id="5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。"><a href="#5、此外，用-DllImport-属性修饰的方法必须具有-extern-修饰符。" class="headerlink" title="　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。"></a>　　5、此外，用 DllImport 属性修饰的方法必须具有 extern 修饰符。</h3><h2 id="下面是-C-调用-Win32-MessageBox-函数的示例："><a href="#下面是-C-调用-Win32-MessageBox-函数的示例：" class="headerlink" title="下面是 C# 调用 Win32 MessageBox 函数的示例："></a>下面是 C# 调用 Win32 MessageBox 函数的示例：</h2><blockquote>
-<p>  using System; </p>
-<p>  using System.Runtime.InteropServices; </p>
-<p>  class MainApp </p>
-<p>  { //通过DllImport引用user32.dll类。MessageBox来自于user32.dll类 </p>
-<p>  　[DllImport(“user32.dll”, EntryPoint=”MessageBox”)] </p>
-<p>  　public static extern int MessageBox(int hWnd, String strMessage, String strCaption, uint uiType); </p>
-<p>  　public static void Main() </p>
-<p>  　{ </p>
-<p>  　　MessageBox( 0, “您好，这是 PInvoke！”, “.NET”, 0 ); </p>
-<p>  　} </p>
-<p>  } </p>
-</blockquote>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/NET/">.NET</a><a href="/tags/Win32-API/">Win32 API</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2014/06/03/青春-就此别过/"><span>青春,就此别过</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2014/06/03/青春-就此别过/" rel="bookmark">
-        <time class="entry-date published" datetime="2014-06-03T09:58:38.000Z">
-          2014-06-03
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>在此时听着Eason新专辑写下这篇文章，怀着一颗复杂的心情，既有着即将毕业的喜悦，又有着即将离别的不舍。</p>
-<p>青春于我来说是各种遗憾的组成。一个狗屎运似的高考二志愿录取，本在开学之初还庆幸有个二本的大学来开始我的大学生涯，还在初期的求学中一边疑惑着专业是干什么的一边认为学校的管理挺好的。随着时间慢慢溜走，心智慢慢成熟，再见证过没有传说中的报告会和运动会不是学生自愿参加而是被迫出观众，也见证了一个大学的食堂从不会逼迫买饭刷卡，也了解了一些不可理喻的规定，终于明白这所大学其实就是一个刚度过青春期的高中。既无一个大学的自由氛围，也无一个成熟的教学体系，而我更悲剧的被调剂到了这个无人了解的专业，迷茫伴随着录取通知书到来一直持续到大学的开学之后的好几年。</p>
-<p>不管多么的不了解将要学习的专业和即将度过四年的学校，新的环境总会令人兴奋，也会让人忘却一切的担忧。</p>
-<p>这四年的大学生活给我更多的是好运。首先，不得不说的是我终于找到了我将要奋斗一生的目标，这对于我来说是最大的喜讯。起源还是由于在看到学长做出来的在我那时看起来牛叉哄哄的系统，心中的一个声音告诉我要通过接下来的学习也完成这样的东西。虽然在之后的学习中出现了各种困难，但人生就这么突然的进入了新的篇章，我从之前随大流的人生状态转为为自己的理想奋斗。理想是让人兴奋，也会让人忘却一切不顺并为自己奋斗的东西奋不顾身的东西。我很庆幸我在这找到了他。其次，我遇到了可能我这辈子都不会再遇到也是这辈子不会忘了的恩师。虽然他没给我在专业技术上做出很多指导，但他给我指明了前进的方向，也让我在别人还在享受大学休闲生活的时候学会了自学，学会了独立思考。也是他曾在我大学迷茫之时给了我一次机会，而我给他的答复是即便困难也从未放弃，即便现在看来我依旧很水，各方面也从未达到过他的要求。无论其他人怎么评价他，他都在我人生中留下了浓墨重彩的一笔。第三，就是这个让我有归属感、同患难的0624101班。这个班级让我在这个不算很大的城市有了一点归属感，这个班级也让我们平淡的大学生活有了不平凡的见证者。有兄弟，有姐妹，有情侣，有基友，一群有爱的家伙。曾记得有个叫生哥的豪爽的班主任在一起聚会；也记得有乔冲、帅栋、马培、小明和律律为班级荣誉跑前跑后；也还记得为了李琦我们集体募捐；也还记得一起在平西湖穿着班服野炊；也在考研教室一起满怀着梦想讨论着自己钟意的生活；地信群里留下了我们不得不说的秘密；篮球场上也有我们一起度过的欢乐时光。这就是我们，经历了很多，也分享了很多的大学大家庭，留下的不仅有苦涩、欢笑，更多的是慢慢的青春回忆。青葱岁月有你们一起走过，真的挺好！希望五年也好，十年也罢，当我们再聚首我们还会在一起欢声笑语。</p>
-<p>毕业聚餐也看到了各种悲伤，四年的时光已经让我们喜欢和习惯了这个班级，每个人都有自己的不舍。我们希望留住这个我们自己谱写的青春赞歌但是时间不会给我们机会了。该走的人总会离别，再留恋的人我们也不得不说一声珍重。谢谢你们在我最美好的四年留下的最珍贵的记忆，不要忘了有我，你们。这次的别离就真的让我们走上各自的人生道路，让我们带着这个回忆，无悔的走向更广阔的人生。还有，你们这些人不要以为毕业了就可以忘了我，都给我好好的记得我，哪天有个麻烦事你们如果能办那么你们是跑不掉的[奸笑]。珍重，你们！</p>
-<p>重新翻看毕业照片，突然感觉我们演了一场很大的戏，一场演了四年的戏。我们一起欢笑着聚首，慢慢的人都齐了，人心也齐了，我们也以最美的姿态展现了我们；接着走着走着曲终人也散了。四年不长但是有我们相互的陪伴走下来才是最难得的。也突然想起来考研的那段时光，每天的话不多但是就是那样一个班让我们感觉很温暖，一起奋斗，一起鼓励，一起探讨，一起小high，最后的冲刺阶段也会相互的鼓励。原来青春最美的不是这几年，而是这几年有这么多的人陪着我们。</p>
-<p>研究生的考试也充满了大喜大悲，起初在认为南师大没招满充满喜悦，再到后来的没过复试线；也曾对山科大满怀憧憬，再到后来的没考数学不录；也曾因桂林理工千里迢迢的跑到一个人生地不熟的城市，最终也被拒之门外。所有的一切都让我对之后的生活充满犹豫，满怀梦想的心也慢慢沉寂。</p>
-<p>本就没有将考研当作未来有所作为的唯一出路，但是当你看到希望就尽在咫尺的时候，最想要的可能就是不顾一切的抓住他吧。即便像我这种曾干脆的说过考上就上考不上就直接工作，从不会认为二战会发生在我身上的人，认为看透了研究生之后最终目的也是为了工作的人，也在知道考研成绩高处国家线不少之后一直犹豫要不要二战。还是会觉得不甘心，这也是我一直以来最大的缺点，在某些重要的决定面前会犹豫不决。我也问过自己这样一个不算太难的问题为什么会如此困扰我，最终也每个答案。</p>
-<p>也是在我即将做出决定的时刻，可以算是幸运的东西又再次降临到我，在调剂的最后一天，我赶上江西理工的最后一班车。可能命运就喜欢给我这种惊喜，大学就是，研究生也是。我放弃了在乎学校好不好，也放弃了在意三年还是两年，现在的我只要求一点，导师给力就行，很庆幸我找到了。至少现在以我的眼界是这样的。</p>
-<p>一个自我感觉良好却不知道自信是什么，一个有过想法却没有追求，一个想要帮助他人却又敏感怕被误解，一个喜欢皆大欢喜却总是弄巧成拙，一个想要自由却又不得不自缚手脚，一个伪学霸真学渣，一个正直不足闷骚有余，一个言语不多却想看透周围，一个运气一般但总能笑对生活，一个算得上靠谱却不能及时赶到身边，一个看起来细心却总粗心不断，这就是我，一个还没吃胖的死瘦子。</p>
-<p>我不认为我能拯救世界，也没想过世界拯救我。可能从小就没有什么好运气，也不曾有太多的奢求，所以造就了现在淡然的我，挂在嘴边最多的就是“淡定”。身边也总会出现一些牛叉哄哄的牛人让我膜拜不已，这可能就是我没有特别好运的人生中最大的好运了吧。我始终相信这样一句话，爱笑的人运气一般都不会太差，所以我总是用笑来赶走霉运，这就是我为什么既没有太大的好运也没太差的霉运。人生已经这么精彩了我就不奢求太多了。</p>
-<p>我，一个存在感极低的人，但也总想浮夸。一些想说又没说出口的话，最后还是留给了我自己。不希望我在乎的人忘了我，所以慢慢的我理解了EASON的《浮夸》，我也希望别人能够在N年之后谈论一下我，“加几声嘘声也不怕”。不管是好事还是糗事，你们只要还记得我这个微薄存在感的人就很好。</p>
-<p>平淡却又温馨的家庭也给我二十几年的生命中烙下了很深的印记，爸妈只做好该做的不奢求其他的生活态度让我学到了很多。他们对生活的满足感和在平淡中寻找快乐的方式都会让我对生活产生不同的理解。生活给了他们很多苦涩但是他们却也总能妙语连珠自得其乐，我和我姐上学期间也未曾让家里轻松过，但是他们却总在尽最大的努力给我们想要的。我们也曾叛逆过，做过一些不太懂事的行为，他们也慢慢的在学习着我们的心思，慢慢的理解我们的世界。我们也会调侃他们用到的新潮的词语，比如“闪婚”抑或“搞笑”。有人说时间长了会把父母当成负担，但我感觉这样其乐融融的家庭是我以后想要的，可能我没办法让我的物质生活很富有，但只为了钱而活着的生活会让我更加痛苦。父母给我上了一节二十几年的课，这会就在我的青春，指引我的人生。</p>
-<p>有很多看起来很难达成的事情，可能去做的时候真的会遇到很多困难和阻碍，但其实最终都会渡过。可能大部分人都有想要放弃的时刻，有些人真的放弃了，有的人又坚持了那么一小会儿，但就是那么一小会儿时间，让他抵达了终点。终点其实非常美丽，这时你会觉得之前那些艰辛，那些绝望的瞬间，都算个屁啊。</p>
-<p>青春最大的魅力就是他的不完美。他将伴着我们的毕业而结束。有喜悦，有痛苦，有不舍，有遗憾。唯独不存在的是后悔，即便不完美。</p>
-<p>一场Eason的演唱会，一次半求学半游玩的毕业旅行，一个high到爆的毕业聚餐，我已经满足了，见证了我不完美的青春，就此别过了，我会怀念你的。</p>
-<p>当然缺了一个她，可能是现在的我还配不上优秀的你，等着我吧，我会用更好的我来迎接你，这也算是我青春最不完美的了吧。</p>
-<p>青春，就此别过了！！！</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Life/">Life</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/"><span>Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/" rel="bookmark">
-        <time class="entry-date published" datetime="2014-05-28T00:31:57.000Z">
-          2014-05-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>今天在安装Aptana Studio 2时出现这个东东，卸载后再安装依旧不行。</p>
-<center>
-
-<p> <img src="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/0_13016219655D2x.gif" alt=""></p>
-<p></p></center><p></p>
-<h1 id="原因-："><a href="#原因-：" class="headerlink" title="原因 ："></a>原因 ：</h1><p>就是由于你把“我的文档”的位置修改造成的。 但Aptana还以为 “我的文档”的位置 是在系统的默认路径下。</p>
-<h1 id="解决办法-："><a href="#解决办法-：" class="headerlink" title="解决办法 ："></a>解决办法 ：</h1><blockquote>
-<p>**右键快捷方式，找到“属性”，把“目标”修改为 </p>
-<p>“D:/Program Files/Aptana Studio 2/AptanaStudio2.exe” -data “D:/Workspaces/Aptana Studio 2”**</p>
-</blockquote>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Aptana-Studio/">Aptana Studio</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/"><span>App_GlobalResources.afvubzdv.resources.dll--拒绝访问。</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/" rel="bookmark">
-        <time class="entry-date published" datetime="2014-05-15T12:55:36.000Z">
-          2014-05-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>在使用ArcGIS Viewer for Silverlight创建应用程序的时候有时会出现编译错误</p>
-<p>前面的忘了  最后是App_GlobalResources.afvubzdv.resources.dll”–“拒绝访问。“</p>
-<p>解决方法：</p>
-<blockquote>
-<p>找文件右键属性&gt; 安全&gt;加权限（可写权限）   对’C:/WINDOWS/Temp，增加权限NETWORK SERVICE，IUSER_XXX，ASPNET，Everyone，给予可写权限。</p>
-</blockquote>
-<p>可能有的找不到  但是能找到的都要添加权限</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/ArcGIS/">ArcGIS</a><a href="/tags/Silverlight/">Silverlight</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/"><span>ArcSDE 10.1安装、配置、连接 （SQL Server 2008）</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/" rel="bookmark">
-        <time class="entry-date published" datetime="2013-05-31T05:56:33.000Z">
-          2013-05-31
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1  概述"></a>1  概述</h1><p>ArcSDE 10.1的安装配置相较于ArcSDE 10.0和之前版本，有了一些显著的变化，比如取消了Post Install向导，很多之前的管理操作改为使用地理处理工具来执行。很多用户初次接触很不适应，本文就为大家介绍如何安装、配置和连接ArcSDE 10.1，测试数据库选择的是Microsoft SQL Server 2008 R2 Enterprise Edition SP3，操作系统是Windows 7 x64 SP1，机器名叫AGS-02，注意，AGS-02的防火墙需要关闭。</p>
-<h1 id="2-安装"><a href="#2-安装" class="headerlink" title="2  安装"></a>2  安装</h1><h2 id="2-1-SQL-Server2008-R2安装"><a href="#2-1-SQL-Server2008-R2安装" class="headerlink" title="2.1 SQL Server2008 R2安装"></a>2.1 SQL Server2008 R2安装</h2><p>这里不多讲SQL Server 2008的安装，只是说明一下其中需要注意的几个地方。</p>
-<h3 id="2-1-1-实例配置"><a href="#2-1-1-实例配置" class="headerlink" title="2.1.1 实例配置"></a>2.1.1 实例配置</h3><p>这里需要注意是使用默认配置还是使用命名实例，如下图，本文使用了命名实例：</p>
-<center><br><br><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_001.jpg" alt=""><br><br></center>
-
-<h3 id="2-1-2-目录配置"><a href="#2-1-2-目录配置" class="headerlink" title="2.1.2 目录配置"></a>2.1.2 目录配置</h3><p>其次要注意数据存储目录，默认的目录是SQL Server安装目录下的子目录，因此如果需要将数据存放到其他磁盘或路径的话，需要在这里制定数据根目录，如下图：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_002.jpg" alt=""></p>
-<p></p></center><br>主要就是实例名和数据存储路径需要注意，其他设置按照一般安装经验处理即可。<p></p>
-<h2 id="2-2-ArcSDE10-1安装"><a href="#2-2-ArcSDE10-1安装" class="headerlink" title="2.2 ArcSDE10.1安装"></a>2.2 ArcSDE10.1安装</h2><p>安装了SQL Server 2008之后，就可以安装ArcSDE了，如下图，选择对应的安装项：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_000.jpg" alt=""></p>
-<p></p></center><br>ArcSDE软件的安装没有什么特殊之处，只要一直Next就行了。安装完ArcSDE之后，没有像以前一样弹出Post Install向导，需要按照下面的步骤进行配置。<p></p>
-<h1 id="3-配置"><a href="#3-配置" class="headerlink" title="3 配置"></a>3 配置</h1><p>进行配置的机器上需要已经安装了ArcGISDesktop 10.1，以便使用地理处理工具。</p>
-<h2 id="3-1-创建地理数据库"><a href="#3-1-创建地理数据库" class="headerlink" title="3.1 创建地理数据库"></a>3.1 创建地理数据库</h2><p>在工具箱中新增了“GeodatabaseAdministration”工具集，其中包含进行地理数据库管理操作的若干工具，如下图所示：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_015.jpg" alt=""></p>
-<p></p></center><br>双击打开“Create EnterpriseGeodatabase”工具，输入参数，如下图所示：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_005.jpg" alt=""></p>
-<p></p></center><br>参数说明：<p></p>
-<p>Database Platform：本文选择SQL_Server，毫无争议；</p>
-<p>Instance：需要填写SQL Server实例名，本文是“AGS-02\ESRICD”；</p>
-<p>Database：地理数据库名称，默认是sde，也可以填其他名称；</p>
-<p>Authorization File：授权文件，即.ecp文件，一般和ArcGIS Server的授权文件是同一个；</p>
-<p>其他就是输入数据库管理员，地理数据库管理员的密码。</p>
-<p>设置好参数后，点击OK开始创建地理数据库，此过程即相当于原来的Post Install，将创建SDE系统表等。</p>
-<p>创建完成后，可以在SQL Server Management Studio中查看结果，如下图：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_012.jpg" alt=""></p>
-<p></p></center><br>如果参数设置正确，就能看到数据库已经多了sde库，其中有sde系统表。如果出现错误，除了检查输入的参数、许可文件之外，数据库连接配置也需要检查，例如作者遇到了数据库连接错误，如下图：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_013.jpg" alt=""></p>
-<p></p></center><br>因为我的数据库服务器上装了SQL Server2008 R2企业版，并且是SP3补丁，而我在客户端则是装的SQL Server Express，并且没有打补丁，所以连接会失败，创建地理数据库也就自然失败了。因此需要确保客户端和服务器端的SQL Server版本一致，能成功连接。<p></p>
-<h1 id="4-连接"><a href="#4-连接" class="headerlink" title="4 连接"></a>4 连接</h1><p>地理数据库已经创建成功，接下来就可以连接到地理数据库了。ArcGIS 10.1中推荐使用直连方式连接，因此默认情况下没有创建SDE系统服务。</p>
-<h2 id="4-1-直连连接"><a href="#4-1-直连连接" class="headerlink" title="4.1 直连连接"></a>4.1 直连连接</h2><p>直连连接比较简单，在“Database Connections”下面双击“Add Database Connection”，如下图：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_003.jpg" alt=""></p>
-<p></p></center><br>弹出直连参数设置窗口，设置直连参数，如下图：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_010.jpg" alt=""></p>
-<p></p></center><br>注意这里的Instance，和创建地理数据库时的需要保持一致，然后选择要连接的地理数据库，输入用户密码，点击OK，即可连接，如下图：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_008.jpg" alt=""></p>
-<p></p></center><br>目前还是空库，接下来我们测试将Shapefile要素类导入这个SDE库中，结果如下：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_007.jpg" alt=""></p>
-<p></p></center><br>说明直连方式已经可以正常使用ArcSDE库了。<p></p>
-<h2 id="4-2-服务连接"><a href="#4-2-服务连接" class="headerlink" title="4.2 服务连接"></a>4.2 服务连接</h2><p>除了推荐的直连方式，有时候我们还需要使用服务连接的方式，需要首先创建ArcSDE服务，然后在客户端以.sde连接文件的方式来连接地理数据库。</p>
-<h3 id="4-2-1-创建ArcSDE服务"><a href="#4-2-1-创建ArcSDE服务" class="headerlink" title="4.2.1 创建ArcSDE服务"></a>4.2.1 创建ArcSDE服务</h3><p>创建ArcSDE服务需要经过三个主要步骤：手动修改服务文件、命令行安装服务、启动服务。</p>
-<p>首先是手动修改服务文件，包括ArcSDE的service.sde文件和Windows系统的service文件，如下面两个图：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_021.jpg" alt=""></p>
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_019.jpg" alt=""></p>
-<p></p></center><br>在这两个文件中，分别添加“esri_sde    5151”并保存，如下图所示：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_020.jpg" alt=""></p>
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_018.jpg" alt=""></p>
-<p></p></center><br>然后使用命令行创建ArcSDE服务，本例命令行如下：<p></p>
-<blockquote>
-<p><strong>sdeservice -o create -d SQLSERVER,AGS-02\ESRICD -psde -i esri_sde</strong></p>
-</blockquote>
-<p>执行结果如下图所示：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_017.jpg" alt=""></p>
-<p></p></center><br>创建成功后即可启动服务，命令行如下：<p></p>
-<blockquote>
-<p><strong>sdemon -o start -i esri_sde -p sde</strong></p>
-</blockquote>
-<p>执行后将要求输入sde用户密码，然后即可启动，如下图所示：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_016.jpg" alt=""></p>
-<p></p></center><br>SDE服务已经启动，然后可以通过服务方式连接了。<p></p>
-<h3 id="4-2-2-创建服务连接文件"><a href="#4-2-2-创建服务连接文件" class="headerlink" title="4.2.2 创建服务连接文件"></a>4.2.2 创建服务连接文件</h3><p>首先找到“Create ArcSDE Connection File”工具，如下图所示：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_006.jpg" alt=""></p>
-<p></p></center><br>打开工具，输入参数，如下图所示：<p></p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_005.jpg" alt=""></p>
-<p></p></center><br>这里需要设置SDE服务所在的机器名或IP（本例是AGS-02），SDE服务名称（本例是esri_sde或5151），此外输入数据库名称（本例是sde）以及用户名密码。<p></p>
-<p>点击OK即可完成.sde服务连接文件的创建，然后到指定目录下找到连接文件，双击即可连接到地理数据库，如下图所示（上面直连测试中导入的数据清晰可见）：</p>
-<center>
-
-<p><img src="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/66030159201301161655441445787218675_004.jpg" alt=""></p>
-<p></p></center><br>说明服务连接方式已经可以正常使用ArcSDE库了。<p></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/ArcSDE/">ArcSDE</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2017 GISerliang
-    
-  </p>
-</footer>
-    
-  </div>
 </div>
-</body>
+
+        <!-- Blog info -->
+<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
+
+    <!-- Search -->
+    
+    <!-- Google -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
+        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
+            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
+        </label>
+
+        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
+            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
+            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+
+            <input type="hidden" name="sitesearch" value="https://giserliang.github.io">
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- LOGO -->
+    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
+        <a href="#" target="_blank">
+            <img src="/img/logo.png" alt="logo" />
+        </a>
+    </div>
+
+    <!-- Infomation -->
+    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+        <!-- Blog Title -->
+        <div>
+            <strong>GISerliang的博客</strong>
+        </div>
+        <div class="section-spacer"></div>
+
+        <!-- Pages -->
+        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">view_carousel</i>
+            <span class="visuallyhidden">Pages</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
+            
+        </ul>
+
+        <!-- Menu -->
+        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">more_vert</i>
+            <span class="visuallyhidden">show menu</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+
+            
+
+            
+                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=GISerliang的博客&url=https://giserliang.github.io/&pic=&searchPic=false&style=simple" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到微博
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=GISerliang的博客&url=https://giserliang.github.io/&via=GISerliang" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Twitter
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://giserliang.github.io/index.html" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Facebook
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://plus.google.com/share?url=https://giserliang.github.io/" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        分享到 Google+
+                    </li>
+                </a>
+            
+
+            
+
+            
+                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=GISerliang的博客&title=GISerliang的博客&summary=我唱的不够动人你别皱眉&pics=https://giserliang.github.io/favicon.ico&url=https://giserliang.github.io/" target="_blank">
+                    <li class="mdl-menu__item">
+                        分享到 QQ
+                    </li>
+                </a>
+            
+
+            
+        </ul>
+    </div>
+</div>
+
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
+    
+
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/08/30/Java中Word转PDF解决方案/">Java中Word转PDF解决方案</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            最近在做一个Web项目，需要用户把Word上传然后展示到页面，但是Word在线浏览的功能不及PDF，因此需要将Word转换成PDF然后展示出来。其中...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/08/30/Java中Word转PDF解决方案/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>8月 30, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2014/07/12/NET框架程序使用Win32-API/">.NET框架程序使用Win32 API</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            .NET 框架程序可以通过静态 DLL 入口点的方式来访问本机代码库。DllImport 属性用于指定包含外部方法的实现的dll 位置。 
+...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2014/07/12/NET框架程序使用Win32-API/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>7月 12, 2014</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2014/06/03/青春-就此别过/">青春,就此别过</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在此时听着Eason新专辑写下这篇文章，怀着一颗复杂的心情，既有着即将毕业的喜悦，又有着即将离别的不舍。
+青春于我来说是各种遗憾的组成...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2014/06/03/青春-就此别过/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>6月 03, 2014</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/">Aptana Studio 2启动时提示Workspace Cannot Be Created解决办法</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            今天在安装Aptana Studio 2时出现这个东东，卸载后再安装依旧不行。
+
+
+ 
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2014/05/28/Aptana-Studio-2启动时提示Workspace-Cannot-Be-Created解决办法/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>5月 28, 2014</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/">App_GlobalResources.afvubzdv.resources.dll--拒绝访问。</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在使用ArcGIS Viewer for Silverlight创建应用程序的时候有时会出现编译错误
+前面的忘了  最后是App_Gl...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2014/05/15/App-GlobalResources-afvubzdv-resources-dll-拒绝访问。/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>5月 15, 2014</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/">ArcSDE 10.1安装、配置、连接 （SQL Server 2008）</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            1  概述...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2013/05/31/ArcSDE-10-1安装、配置、连接-（SQL-Server-2008）/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="GISerliang's avatar">
+            </div>
+            <div>
+                <strong>GISerliang</strong>
+                <span>5月 31, 2013</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="GISerliang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        giserliang@hotmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/07/">七月 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/06/">六月 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/05/">五月 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/05/">五月 2013<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>GISerliang的博客
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Swiftye -->
+    
+
+    <!-- Local Search-->
+    
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
 </html>
