@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://giserliang.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-06-30T07:13:58.652Z</updated>
+    <title>GISerliang</title>
+    <updated>2021-06-30T07:17:23.143Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://giserliang.github.io"/>
     <link rel="self" href="https://giserliang.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>若你喜欢怪人 其实我很美</subtitle>
     <logo>https://giserliang.github.io/images/avatar.png</logo>
     <icon>https://giserliang.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, GISerliang</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://giserliang.github.io/post/hello-gridea/</id>
