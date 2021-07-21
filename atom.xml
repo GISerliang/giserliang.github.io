@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://giserliang.github.io</id>
     <title>GISerliang</title>
-    <updated>2021-07-21T16:28:18.916Z</updated>
+    <updated>2021-07-21T16:32:46.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://giserliang.github.io"/>
     <link rel="self" href="https://giserliang.github.io/atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://giserliang.github.io/post/osgearth-30-xi-lie-bian-yi/</id>
         <link href="https://giserliang.github.io/post/osgearth-30-xi-lie-bian-yi/">
         </link>
-        <updated>2021-07-21T06:44:32.000Z</updated>
+        <updated>2021-07-20T06:44:32.000Z</updated>
         <content type="html"><![CDATA[<p><code>osgEarth 3.0</code>是<code>osgEarth</code>的一个大版本升级，使得<code>osgEarth</code>更容易使用；但是<code>osgEarth</code>官方不提供编译好的<code>SDK</code>，因此首先要跨过编译才能正常使用。本文仅介绍Windows编译方式。</p>
 <ol>
 <li><code>VCPKG</code>编译<br>
