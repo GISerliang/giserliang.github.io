@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>osgEarth 3.0系列——windows编译 | GISerliang</title>
+<meta name="description" content="若你喜欢怪人 其实我很美">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://giserliang.github.io/favicon.ico?v=1626882964325">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://giserliang.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://giserliang.github.io">
+        <img class="avatar" src="https://giserliang.github.io/images/avatar.png?v=1626882964325" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://giserliang.github.io">
+        <h1 class="site-title">GISerliang</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">osgEarth 3.0系列——windows编译</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-07-21</span>
+            
+          </div>
+          <div class="post-content">
+            <p><code>osgEarth 3.0</code>是<code>osgEarth</code>的一个大版本升级，使得<code>osgEarth</code>更容易使用；但是<code>osgEarth</code>官方不提供编译好的<code>SDK</code>，因此首先要跨过编译才能正常使用。本文仅介绍Windows编译方式。</p>
+<ol>
+<li><code>VCPKG</code>编译<br>
+官方提供了<code>vcpkg</code>编译方式快速编译，但是作者在使用<code>vcpkg</code>编译之后引入<code>osgEarth</code>类库无法使用，会报错。咨询过许多小伙伴也出现过同样的问题，遂得出<code>vcpkg</code>编译有问题，弃之。</li>
+<li><code>CMAKE</code> + <code>VCPKG</code> + <code>Visual Studio</code>编译<br>
+<strong>前提</strong><br>
+熟悉CMake的简单编译流程<br>
+<strong>准备阶段</strong><br>
+1）下载安装<a href="https://git-scm.com/downloads">Git</a><br>
+2）下载安装<code>Visual Studio 2015/2017 Community</code> （作者仅测试过这两个版本，其他未测试）<br>
+3）下载安装<a href="https://cmake.org/download/">CMAKE</a><br>
+4）下载并解压<a href="https://objexx.com/OpenSceneGraph.html">OpenSceneGraph</a><br>
+5）下载安装<a href="https://www.gisinternals.com/release.php">GDAL</a> 或 通过<a href="https://trac.osgeo.org/osgeo4w/">OSGeo4W64</a>安装<br>
+6）<code>git clone</code> <a href="https://github.com/gwaldron/osgearth.git">osgEarth</a>，<code>osgEarth 3.x</code>版本现在有3.0、3.1、3.2三个版本，可<code>git checkout</code>任意切换。<br>
+<strong><code>vcpkg</code>编译阶段</strong><br>
+<code>osgEarth</code>必备类库curl、basisu、geos、glew、libzip、protobuf、sqlite3、webp、draco可用过<code>vcpkg</code>安装。如动手能力强可自行通过<code>CMake</code>编译。<br>
+<strong><code>CMake</code>配置阶段</strong><br>
+打开<code>CMake-gui</code>，配置好源代码路径和编译路径，点击<code>configure</code>，如下配置<code>Visual Studio</code>版本和编译平台，点击“确定”等待配置完成。<br>
+<img src="https://giserliang.github.io/post-images/1626860429858.png" alt="CMake configure" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626861178105.png" alt="CMake Configure Done" loading="lazy"><br>
+配置完成后，<code>CMake</code>会根据默认配置列出编译依赖的类库和其他信息，点开可查看配置是否正确，如不正确可修改配置信息后重新点击<code>configure</code>按钮，日志框显示<code>Configuring done</code>且配置列表中没有红色标识表示配置完成。<br>
+<img src="https://giserliang.github.io/post-images/1626862566950.png" alt="CMake Configure" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626862569099.png" alt="CMake Configure" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626862571549.png" alt="CMake Configure" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626862752454.png" alt="CMake Configure Done" loading="lazy"><br>
+点击<code>Genetate</code>生成<code>Visual Studio</code>解决方案，待日志框输出<code>Generating Done</code>说明生成无误，点击<code>Open Project</code>打开解决方案，等待解决方案加载完成，默认编译<code>Debug</code>，由于作者配置的类库是<code>release</code>相关的，所以切换到<code>Release</code>编译。<br>
+<img src="https://giserliang.github.io/post-images/1626880915806.png" alt="Release" loading="lazy"><br>
+右键<code>ALL BUILD</code>选择“生成”，等待<code>osgEarth</code>编译完成。<br>
+<img src="https://giserliang.github.io/post-images/1626880381887.png" alt="ALL BUILD" loading="lazy"><br>
+<strong>错误信息</strong><br>
+编译过程会出现<code>LNK 2001</code>错误，如下图，主要原因是<code>Tool osgearth_imgui</code>缺少了glew依赖项（<strong>CMake已配置但该处缺少，原因未知</strong>），可如下手动添加。<br>
+<img src="https://giserliang.github.io/post-images/1626880540803.png" alt="BUILD ERROR" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626880770341.png" alt="Properties" loading="lazy"><br>
+<img src="https://giserliang.github.io/post-images/1626881052517.png" alt="Add Deps" loading="lazy"><br>
+再次编译，已经可以正常生成。<br>
+<strong>拓展</strong><br>
+在CMake的高级选项打开后可选择可选项，打开方式如下：<br>
+<img src="https://giserliang.github.io/post-images/1626881425722.png" alt="Advanced" loading="lazy"><br>
+此时，<code>osgEarth</code>配置的一些高级选项已出现<br>
+<img src="https://giserliang.github.io/post-images/1626881636047.png" alt="Advanced" loading="lazy"><br>
+可选择构建<code>leveldb</code>缓存、<code>rocksdb</code>缓存以及<code>geocoder</code>等，这些类库也可通过<code>vcpkg</code>编译，修改可选项后需要重新配置并生成；若<code>rocksdb</code>为手动编译且使用<code>zstd</code>类库，在VS中编译时会出现一个新的<code>LNK 2001</code>错误<br>
+<img src="https://giserliang.github.io/post-images/1626882688913.png" alt="ZSTD Error" loading="lazy"><br>
+同上，配置项目的依赖项<br>
+<img src="https://giserliang.github.io/post-images/1626882869683.png" alt="ZSTD Deps" loading="lazy"><br>
+重新编译，直到没有错误信息。</li>
+</ol>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://giserliang.github.io/post/osgearth-30-xi-lie-featureimagelayer/">
+              <h3 class="post-title">
+                下一篇：osgEarth 3.0系列——FeatureImageLayer
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">若你喜欢怪人 其实我很美</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/GISerliang" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://giserliang.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5bf1bc1aa4d037312b0d',
+        clientSecret: '32bd3785a9a6d59fb94a207cd27ebc23e29d8f05',
+        repo: 'giserliang.github.io',
+        owner: 'GISerliang',
+        admin: ['GISerliang'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
